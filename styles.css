@@ -14,7 +14,11 @@
   }
   
   .app {
+    position: relative;
+    width: 100%;
+    height: 100%;
     padding: 16px;
+    
   }
   
   button,
@@ -110,3 +114,200 @@
         line-height: 1;
     }
     
+
+    .progress-container {
+        display: flex;
+        flex-direction: column; 
+        position: absolute;
+        top: 50px;
+        right: 20px; 
+
+        width: 170px; 
+        height: 60px; 
+        background-color: #F4D7E5; 
+        border-radius: 10px;
+        justify-content: center; 
+        align-items: center;     
+        gap: 4px;               
+        padding: 5px;
+    }
+    
+   
+    .progress-bar {
+        width: 130px; 
+        height: 12px;
+        background-color: #F084B5; 
+        border-radius: 10px;
+        overflow: hidden; 
+        position: relative;
+    }
+    
+    
+    .progress-fill {
+        width: 0%; 
+        height: 100%;
+        background-color: #00AE83;
+        transition: width 0.3s ease;
+    }
+    
+    
+    #progress-label {
+        font-size: 10px;
+        color: #00AE83;
+        font-family: "Bebas Neue", sans-serif;
+        line-height: 1;
+    }
+
+    #progress{
+        font-size: 20px;
+        color: #D30F1B;
+        font-family: "Bebas Neue", sans-serif;
+    }
+
+
+.input-group {
+    display: flex;
+    position: absolute;
+    top: 115px; /* Ajuste para ficar logo abaixo do calendário/barra */
+    left: 20px;
+    right: 20px;
+    gap: 8px; /* Espaço entre o campo e o botão */
+    -webkit-app-region: no-drag;
+}
+
+/* Estilização do campo de texto */
+#newTask {
+    flex-grow: 1; /* Faz o campo ocupar todo o espaço disponível */
+    height: 30px;
+    padding: 0 10px;
+    border: 2px solid #F4D7E5; /* Rosa claro igual ao fundo do calendário */
+    border-radius: 8px;
+    background-color: white;
+    font-family: "Bebas Neue", sans-serif;
+    color: #D30F1B; /* Cor do texto ao digitar */
+    outline: none; /* Remove aquela borda azul padrão ao clicar */
+}
+
+/* Efeito ao clicar no campo de texto */
+#newTask:focus {
+    border-color: #F084B5; /* Fica um rosa mais forte ao clicar */
+}
+
+/* Estilização do botão de adicionar (+) */
+#addBtn {
+    width: 35px;
+    height: 30px;
+    background-color: #00AE83; /* Verde que você usa no progresso */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+/* Efeito ao passar o mouse no botão */
+#addBtn:hover {
+    background-color: #008f6b; /* Um verde um pouco mais escuro */
+}
+/* Estilo de cada tarefa que o JS cria */
+.task {
+ 
+    margin-top: 15px;
+    max-height: 180px; /* Ajuste conforme necessário */
+    overflow-y: auto;
+    padding-right: 5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+.task span {
+    flex-grow: 1;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.btn-deletar {
+    background-color: transparent; 
+    border: none;                
+    color: #D30F1B;               
+    font-size: 22px;              
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+    transition: transform 0.2s;   
+    -webkit-app-region: no-drag;  
+}
+
+.btn-deletar:hover {
+    transform: scale(1.2);        
+    color: #ff0000;             
+}
+
+/* Estilo base do Checkbox */
+.task-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #F084B5; /* Rosa do "HOJE" */
+    border-radius: 6px;
+    background-color: #FFF;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+    flex-shrink: 0; /* Impede que o checkbox amasse */
+}
+
+/* Quando passar o mouse */
+.task-check:hover {
+    border-color: #D30F1B; /* Vermelho do calendário */
+    background-color: #FFF0F5;
+}
+
+/* Quando estiver MARCADO (Checked) */
+.task-check:checked {
+    background-color: #00AE83; /* Verde que você já usa */
+    border-color: #00AE83;
+}
+
+/* O sinal de "V" (Checkmark) usando CSS */
+.task-check:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+.task:has(.task-check:checked) span {
+    text-decoration: line-through;
+    color: #999;
+    opacity: 0.6;
+}
+#tasks {
+    position: absolute;
+    top: 160px; /* Ajuste para ficar abaixo do input */
+    left: 20px;
+    right: 20px;
+    max-height: 180px;
+    overflow-y: auto;
+    -webkit-app-region: no-drag;
+}

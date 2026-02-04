@@ -14,20 +14,29 @@
     <div class="app">
         <div class="title">TO-DO LIST</div>
         <button id="close-btn">&times;</button>
- 
-
+    
         <div id="calendar">
             <div id="day">
-              <div id="dayName"></div>
-              <span id="day-number"></span> 
-              <div id="month"></div>
+                <div id="dayName"></div>
+                <span id="day-number"></span> 
+                <div id="month"></div>
             </div>
         </div>
-
-        <div id = "progress"> 
-            
+    
+        <div class="progress-container">
+            <span id="progress">PROGRESSO</span>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <span id="progress-label">0 / 0 COMPLETAS</span>
         </div>
-
+    
+        <div class="input-group">
+            <input type="text" id="newTask" placeholder="NOVA TAREFA...">
+            <button id="addBtn">+</button>
+        </div>
+        
+        <div id="tasks"></div>
     </div>
 
     <script src="script.js"></script>
