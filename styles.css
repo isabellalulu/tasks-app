@@ -164,41 +164,49 @@
         font-family: "Bebas Neue", sans-serif;
     }
 
-
+    #newTask::placeholder {
+        color: #D30F1B; 
+        font-family: "Bebas Neue", sans-serif;
+    }
+    
+    
+    #newTask::-webkit-input-placeholder {
+        color: #D30F1B;
+    }
 .input-group {
     display: flex;
     position: absolute;
-    top: 115px; /* Ajuste para ficar logo abaixo do calendário/barra */
+    top: 115px; 
     left: 20px;
     right: 20px;
-    gap: 8px; /* Espaço entre o campo e o botão */
+    gap: 8px;
     -webkit-app-region: no-drag;
 }
 
-/* Estilização do campo de texto */
+
 #newTask {
-    flex-grow: 1; /* Faz o campo ocupar todo o espaço disponível */
+    flex-grow: 1; 
     height: 30px;
     padding: 0 10px;
-    border: 2px solid #F4D7E5; /* Rosa claro igual ao fundo do calendário */
     border-radius: 8px;
-    background-color: white;
+    border: #FCDFCD;
+    background-color: #F4D7E5;
     font-family: "Bebas Neue", sans-serif;
-    color: #D30F1B; /* Cor do texto ao digitar */
-    outline: none; /* Remove aquela borda azul padrão ao clicar */
+    color: #D30F1B; 
+    outline: none; 
 }
 
-/* Efeito ao clicar no campo de texto */
+
 #newTask:focus {
-    border-color: #F084B5; /* Fica um rosa mais forte ao clicar */
+    border-color: #F084B5; 
 }
 
-/* Estilização do botão de adicionar (+) */
+
 #addBtn {
     width: 35px;
     height: 30px;
-    background-color: #00AE83; /* Verde que você usa no progresso */
-    color: white;
+    background-color: #00AE83; 
+    color: #F4D7E5;
     border: none;
     border-radius: 8px;
     font-size: 20px;
@@ -209,43 +217,58 @@
     transition: background-color 0.2s;
 }
 
-/* Efeito ao passar o mouse no botão */
 #addBtn:hover {
-    background-color: #008f6b; /* Um verde um pouco mais escuro */
+    background-color: #008f6b; /
 }
-/* Estilo de cada tarefa que o JS cria */
+
 .task {
- 
-    margin-top: 15px;
-    max-height: 180px; /* Ajuste conforme necessário */
-    overflow-y: auto;
-    padding-right: 5px;
-    
     display: flex;
-    align-items: center;
+    align-items: center;      
     justify-content: space-between;
-    background: white;
-    padding: 8px;
-    margin-bottom: 5px;
-    border-radius: 5px;
+    background: #F084B5;
+    padding: 10px 12px;       
+    margin-bottom: 8px;
+    border-radius: 10px;
+    width: 100%;              
+ 
+    flex-shrink: 0;         
 }
 
 
 .task span {
-    flex-grow: 1;
-    margin: 0 10px;
+    flex-grow: 1;            
+    margin: 0 12px;
     font-size: 14px;
+    color: #F4D7E5;
+    font-family: "Bebas Neue", sans-serif;
+    
+   
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.2;
 }
 
+
 .btn-deletar {
-    background-color: transparent; 
-    border: none;                
-    color: #D30F1B;               
-    font-size: 22px;              
+    width: 24px;              
+    height: 24px;             
+    flex-shrink: 0;           
+    
+    background-color: #D30F1B; 
+    border: none;     
+    border-radius: 50%;       
+    color: #FCDFCD;               
+    font-size: 18px;         
     font-weight: bold;
     cursor: pointer;
+    
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    padding: 0;              
     line-height: 1;
-    padding: 0 5px;
+    
     transition: transform 0.2s;   
     -webkit-app-region: no-drag;  
 }
@@ -255,35 +278,35 @@
     color: #ff0000;             
 }
 
-/* Estilo base do Checkbox */
+
 .task-check {
     appearance: none;
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #F084B5; /* Rosa do "HOJE" */
+    width: 20px;              
+    height: 20px;             
+    flex-shrink: 0;          
+    
+    border: 2px solid #F084B5; 
     border-radius: 6px;
-    background-color: #FFF;
+    background-color: #F4D7E599; 
     cursor: pointer;
     position: relative;
-    transition: all 0.2s ease;
-    margin-right: 10px;
-    flex-shrink: 0; /* Impede que o checkbox amasse */
+    margin: 0;                
 }
 
-/* Quando passar o mouse */
+
 .task-check:hover {
-    border-color: #D30F1B; /* Vermelho do calendário */
+    border-color: #FCDFCD; 
     background-color: #FFF0F5;
 }
 
-/* Quando estiver MARCADO (Checked) */
+
 .task-check:checked {
-    background-color: #00AE83; /* Verde que você já usa */
+    background-color: #00AE83; 
     border-color: #00AE83;
 }
 
-/* O sinal de "V" (Checkmark) usando CSS */
+
 .task-check:checked::after {
     content: '';
     position: absolute;
@@ -299,15 +322,42 @@
 
 .task:has(.task-check:checked) span {
     text-decoration: line-through;
-    color: #999;
-    opacity: 0.6;
+    color: #FCDFCD;
+    opacity: 0.7;            
 }
+
 #tasks {
     position: absolute;
-    top: 160px; /* Ajuste para ficar abaixo do input */
+    top: 160px;
     left: 20px;
     right: 20px;
-    max-height: 180px;
+    bottom: 20px;
+
+    background-color: #f4d7e599; 
+    border-radius: 12px;
+    padding: 10px;
+
     overflow-y: auto;
+    display: flex; 
+    flex-direction: column;
     -webkit-app-region: no-drag;
+}
+#tasks::-webkit-scrollbar {
+    width: 6px;
+}
+
+#tasks::-webkit-scrollbar-thumb {
+    background-color: #F084B5; 
+    border-radius: 10px;
+}
+
+
+#tasks:empty::before {
+    content: "ADICIONE UMA TAREFA..."; 
+    margin: auto; 
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 14px;
+    color: #f084b5; 
+    opacity: 0.5; 
+    letter-spacing: 1px;
 }

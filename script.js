@@ -8,7 +8,7 @@ const tasks = document.getElementById('tasks');
 function updateCalendar(){
     const now = new Date();
     const day = now.getDate();
-    // Formata para pt-BR e remove o ponto que às vezes aparece
+
     const dayName = now.toLocaleDateString("pt-BR", { weekday : "long"});
     const month = now.toLocaleDateString ("pt-BR", { month: "long"});
 
@@ -17,7 +17,7 @@ function updateCalendar(){
     document.getElementById('dayName').textContent = dayName.toUpperCase();
 }
 
-// Lógica de Adicionar Tarefa
+
 addBtn.addEventListener("click", (e) => {
     const taskText = newTask.value.trim();
 
@@ -67,11 +67,11 @@ function updateProgress() {
     if(label) label.textContent = `${checked} / ${total} COMPLETAS`;
 }
 
-// Fechar App
+
 document.getElementById('close-btn').addEventListener('click', () => {
     ipcRenderer.send('close-app');
 });
 
-// Inicialização
+
 updateCalendar();
 updateProgress();
