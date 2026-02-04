@@ -4,6 +4,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 280,
     height: 360,
+    icon: __dirname + '/images/iconToDoList.icns',
     resizable: false,
     maximizable: false,
     fullscreenable: false,
