@@ -29,38 +29,43 @@
   #close-btn {
 
     position: absolute;
-    
-    top: 5px;
-    
-    right: 5px;
-    
-    background: rgba(255, 255, 255, 0.2); /* Fundo leve para teste */
-    
+    top: 17px;
+    right: 20px;
+    background-color: #F084B5; /* Fundo leve para teste */
     border: none;
-    
-    color: red;
-    
+    color: #FCDFCD;
     font-size: 20px;
-    
     font-weight: bold;
-    
     cursor: pointer;
-    
-    z-index: 9999; /* Fica na frente de todas as imagens */
-    
+    z-index: 9999; 
     -webkit-app-region: no-drag;
-    
-    width: 30px;
-    
-    height: 30px;
-    
+    width: 21px;
+    height: 21px;
     border-radius: 50%;
-    
     display: flex;
-    
     justify-content: center;
-    
     align-items: center;
     
+    }
+
+    .title{
+        top: 10px;
+        width: 120px;
+        height: 30px;
+        margin: 0 auto;
+       
+
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 20;
+        font-style: normal;
+
+        color: #D30F1B;
+        display: flex;
+        background-color: #F4D7E5;
+        border-radius: 10rem;
+
     }
     
