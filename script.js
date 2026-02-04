@@ -10,7 +10,7 @@ function updateCalendar(){
     const month = monthNames[now.getMonth()];
 
     // Usando textContent para garantir a exibição
-    document.getElementById('day').textContent = day;
+    document.getElementById('day-number').textContent = day;
     document.getElementById('month').textContent = month;
 }
 

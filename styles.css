@@ -7,7 +7,7 @@
     margin: 0;
     width: 100vw;
     height: 100vh;
-  
+    border-radius: 10px;
     background: #FCDFCD;
     user-select: none;
     -webkit-app-region: drag;
@@ -31,7 +31,7 @@
     position: absolute;
     top: 17px;
     right: 20px;
-    background-color: #F084B5; /* Fundo leve para teste */
+    background-color: #F084B5; 
     border: none;
     color: #FCDFCD;
     font-size: 20px;
@@ -67,5 +67,46 @@
         background-color: #F4D7E5;
         border-radius: 10rem;
 
+    }
+
+    #calendar {
+        display: flex;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+    }
+    
+    #day {
+        color: #D30F1B;
+        font-family: "Bebas Neue", sans-serif;
+        
+        width: 50px;  
+        height: 50px;
+        background-color: #F4D7E5;
+        border-radius: 10px; 
+        
+       
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        align-items: center;
+        padding: 4px 0; 
+    }
+    
+    #hoje {
+        color: #F084B5;
+        font-size: 10px; 
+        line-height: 1;
+    }
+    
+    #day-number {
+        font-size: 20px; 
+        line-height: 1;
+    }
+    
+    #month {
+        color: #00AE83;
+        font-size: 10px; 
+        line-height: 1;
     }
     
