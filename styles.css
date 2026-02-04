@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+  
+    background: #FCDFCD;
+    user-select: none;
+    -webkit-app-region: drag;
+  }
+  
+  .app {
+    padding: 16px;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+  }
+
+ 
+  #close-btn {
+
+    position: absolute;
+    
+    top: 5px;
+    
+    right: 5px;
+    
+    background: rgba(255, 255, 255, 0.2); /* Fundo leve para teste */
+    
+    border: none;
+    
+    color: red;
+    
+    font-size: 20px;
+    
+    font-weight: bold;
+    
+    cursor: pointer;
+    
+    z-index: 9999; /* Fica na frente de todas as imagens */
+    
+    -webkit-app-region: no-drag;
+    
+    width: 30px;
+    
+    height: 30px;
+    
+    border-radius: 50%;
+    
+    display: flex;
+    
+    justify-content: center;
+    
+    align-items: center;
+    
+    }
+    

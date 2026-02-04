@@ -1,0 +1,28 @@
+# Dependências
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Builds do Electron (electron-builder/forge)
+dist/
+out/
+release/
+
+# Variáveis de ambiente (Segurança!)
+.env
+.env.local
+
+# Cache e temporários
+.eslintcache
+.stylelintcache
+.parcel-cache
+.cache/
+
+# Arquivos do Sistema
+*.bak
+*.swp
+*.code-workspace
+.DS_Store
